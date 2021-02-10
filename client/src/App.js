@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1>Galera Seleta, the Movie: The Game</h1>
+        <h1>Galere Seleta, the Movie: The Game</h1>
       </div>
       <div className="app-container">
         <BrowserRouter>
