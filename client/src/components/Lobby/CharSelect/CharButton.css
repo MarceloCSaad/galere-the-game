@@ -1,0 +1,23 @@
+.char-button-container {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px;
+  padding: 10px;
+  color: black;
+}
+.char-button-container-selected {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px;
+  padding: 10px;
+  background-color: crimson;
+  color: white;
+}
+.char-button-container:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
