@@ -8,7 +8,7 @@ class playableCharacter {
 }
 
 // I'm hardcoding below, but ideally you should get the playable character info from MYSQL:
-const list = [
+const charList = [
   { id: 1,
     name: "Snades",
     bio: "No início do seu turno, cagar regras adicionais igual a sua raiva!"
@@ -35,4 +35,4 @@ const list = [
   }
 ]
 
-module.exports = { list }
+module.exports = { charList }

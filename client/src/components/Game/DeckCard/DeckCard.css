@@ -1,0 +1,81 @@
+.DeckCard-slot{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 175px;
+    margin-right: 2px;
+}
+.DeckCard-container{
+    cursor: pointer;
+    position: absolute;
+    bottom: -80px;
+    margin: 3px;
+
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+}
+.DeckCard-container:hover{
+    bottom: 0px;
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+}
+.DeckCard-top{
+    overflow: hidden;
+}
+.DeckCard-name{
+    background-color: dimgray;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 5px;
+
+}
+.DeckCard-image{
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-style: solid;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 5px 5px 0px 5px;
+}
+.DeckCard-cost{
+    position: relative;
+    top: 72px;
+    right: -65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #c0006a;
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    border: solid  white;
+    border-width: 4px;
+    border-radius: 30px;
+}
+.DeckCard-bottom{
+    font-size: small;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-style: solid;
+    border-radius: 0px 0px 15px 15px;
+    border-width: 0px 5px 5px 5px;
+    padding: 10px;
+    background-color: #252726;
+}

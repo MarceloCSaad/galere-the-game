@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import socket from "../../socket";
+import { Link } from 'react-router-dom'
 import CharButton from "./CharButton";
+
 import "./CharSelect.css"
 
 
@@ -16,11 +18,11 @@ export default function CharSelect () {
   useEffect( () => { getPlayableChars() }, [])
   
   function getPlayableChars() {
-    console.log("Emiting event 'getPlayableChars' to backend")
+    console.log("Emiting event 'getPlayableChars' to server")
     socket.emit('getPlayableChars', (payload) => {
-      console.log('Received playable character list from backend.')
-      console.log('Returning payload.list', payload.list)
-      setPlayableCharacters( payload.list )
+      console.log('Received playable character list from server.')
+      console.log('Returning payload', payload.charList)
+      setPlayableCharacters( payload.charList )
     })
   }
 
@@ -36,13 +38,24 @@ export default function CharSelect () {
 
 
   function renderConfirmButton () {
-    let buttonStyle = (playerCharacter === null) //preguiça de fazer if, to usando operador ternário
+    let buttonStyle = (playerCharacter === null) //preguiça, usando operador ternário
     ? {opacity: '0.3', cursor: 'default'}
     : {opacity: '1', cursor: 'pointer'}
 
     return (playerCharacter === null)
     ? (<button style={buttonStyle}>Escolha teu campeão</button>)
-    : (<button style={buttonStyle} onClick={() => console.log('to do, update available character list for all users', playableCharacters[playerCharacter-1].name)}>Beber como {playableCharacters[playerCharacter-1].name}!</button>);
+    : (
+        <Link to={'/Game'} onClick={ () => {} }>
+          <button style={buttonStyle} onClick={() => console.log('to do, update available character list for all users')} type="submit">
+            Beber como {playableCharacters[playerCharacter-1].name}!
+          </button>
+        </Link>
+
+        //This horrible hardcoded monster of a routing path above should instead just emit a "select character event".
+        //Then, once all players had selected their characters the game would be ready to start.
+        //for testing purposes I'm just straigh up routing the user to the /Game path... just as a way of visualizing the Game frontend.
+        //TLDR: Project is still very incomplete, and I'm using routing to navigate for now.
+      )
   }
 
   return(

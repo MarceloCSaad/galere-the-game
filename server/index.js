@@ -1,5 +1,4 @@
 const VARS = require('./connection/vars');
-require('dotenv').config()
 const mysql = require('mysql');
 const charList = require('./lib/character') // Hard Coded ==> Should get from MySQL
 
@@ -19,6 +18,7 @@ connection.connect(err =>
 
 VARS.IO.on( 'connection', (socket) => {
   console.log( 'We have a new connection:', socket.id )
+  
   // Let's create events now:
   socket.on('join', (data) => {
     console.log('got data back from "join" event:', data)
@@ -27,7 +27,7 @@ VARS.IO.on( 'connection', (socket) => {
   socket.on('getPlayableChars', (callback) => {
     payload = charList;
     console.log('Frontend request existing playable characters...')
-    console.log('Sending payload back!')
+    console.log('Sending payload back!',payload)
     callback(payload) // This callback is socket.oi's res.send()
   })
 
